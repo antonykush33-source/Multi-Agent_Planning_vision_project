@@ -45,7 +45,7 @@ from map_parser     import load_grid_cell_resolution, load_grid_auto, load_scena
 from agent_detector import detect_agents, detect_markers
 
 
-# ── connectivity check ────────────────────────────────────────────────────────
+# === connectivity check ==========================================
 
 def connectivity_ratio(grid: np.ndarray) -> float:
     """
@@ -71,7 +71,7 @@ def connectivity_ratio(grid: np.ndarray) -> float:
     return len(visited) / len(free_cells)
 
 
-# ── single-case evaluation ────────────────────────────────────────────────────
+# === single-case evaluation =======================================
 
 def evaluate_case(case_path: str, verbose: bool = False) -> Dict:
     """
@@ -87,7 +87,7 @@ def evaluate_case(case_path: str, verbose: bool = False) -> Dict:
 
     result = {"case": case_name}
 
-    # ── 1. Map parsing ────────────────────────────────────────────────────────
+    # === 1. Map parsing ==========================================
     t0 = time.perf_counter()
     grid, gw, gh = load_grid_auto(map_path, metrics_path)
     t_map = (time.perf_counter() - t0) * 1000  # ms
@@ -118,7 +118,7 @@ def evaluate_case(case_path: str, verbose: bool = False) -> Dict:
               f"  gt={gt_density}  err={density_error}  conn={conn_ratio:.4f}"
               f"  time={t_map:.1f}ms")
 
-    # ── 2. Agent detection ────────────────────────────────────────────────────
+    # === 2. Agent detection ==========================================
     scenario   = load_scenario(sc_path)
     agents_gt  = {a["id"]: tuple(a["start"]) for a in scenario["agents"]}
 
@@ -163,7 +163,7 @@ def evaluate_case(case_path: str, verbose: bool = False) -> Dict:
         "per_agent":      agent_rows,
     }
 
-    # ── 3. P/D marker detection (MAPD only) ───────────────────────────────────
+    # === 3. P/D marker detection (MAPD only) ================================
     marker_result = None
     if scenario.get("type") == "mapd" and os.path.exists(preview_path):
         t2 = time.perf_counter()
@@ -227,7 +227,7 @@ def evaluate_case(case_path: str, verbose: bool = False) -> Dict:
     return result
 
 
-# ── multi-case summary ────────────────────────────────────────────────────────
+# === multi-case summary =================================================
 
 def discover_cases(data_dir: str = "data") -> List[str]:
     """Return sorted list of case directories found in data_dir."""
@@ -244,7 +244,7 @@ def discover_cases(data_dir: str = "data") -> List[str]:
 def print_summary(results: List[Dict]) -> None:
     """Print a multi-section summary table to stdout."""
 
-    # ── Map parsing table ──────────────────────────────────────────────────
+    # === Map parsing table =================================================
     print("\n" + "=" * 72)
     print("  CV PIPELINE EVALUATION SUMMARY")
     print("=" * 72)
@@ -260,7 +260,7 @@ def print_summary(results: List[Dict]) -> None:
         print(f"  {r['case']:<30} {m['grid_size']:>8} {m['obstacle_density']:>9.4f}"
               f" {gt_den:>9} {den_err:>7} {m['connectivity']:>6.3f} {m['parse_time_ms']:>6.1f}")
 
-    # ── Agent detection table ──────────────────────────────────────────────
+    # === Agent detection table ===========================================
     print("\n┌─ 2. AGENT DETECTION ACCURACY " + "─" * 41 + "┐")
     hdr = f"  {'Case':<30} {'Found':>7} {'Rate':>6} {'MeanErr':>8} {'MaxErr':>7} {'ms':>6}"
     print(hdr)
@@ -272,7 +272,7 @@ def print_summary(results: List[Dict]) -> None:
         print(f"  {r['case']:<30} {a['detected_cv']:>3}/{a['total']:<3}"
               f" {a['detection_rate']:>6.2f} {me:>8} {mx:>7} {a['detect_time_ms']:>6.1f}")
 
-    # ── Marker detection table (MAPD cases only) ───────────────────────────
+    # === Marker detection table (MAPD cases only) ========================
     mapd_results = [r for r in results if r["markers"] is not None]
     if mapd_results:
         print("\n┌─ 3. P/D MARKER DETECTION (MAPD) " + "─" * 37 + "┐")
@@ -286,7 +286,7 @@ def print_summary(results: List[Dict]) -> None:
             print(f"  {r['case']:<30} {mk['detected_cv']:>3}/{mk['total']:<3}"
                   f" {mk['detection_rate']:>6.2f} {me:>8} {mx:>7} {mk['detect_time_ms']:>6.1f}")
 
-    # ── Timing breakdown ───────────────────────────────────────────────────
+    # === Timing breakdown ================================================
     print("\n┌─ 4. PIPELINE TIMING BREAKDOWN (ms) " + "─" * 34 + "┐")
     hdr = f"  {'Case':<30} {'MapParse':>10} {'AgentDet':>10} {'MarkerDet':>10} {'Total':>7}"
     print(hdr)
@@ -299,7 +299,7 @@ def print_summary(results: List[Dict]) -> None:
     print("\n" + "=" * 72)
 
 
-# ── entry point ───────────────────────────────────────────────────────────────
+# === entry point ==========================================================
 
 def main():
     parser = argparse.ArgumentParser(description="CV Pipeline Evaluator")
