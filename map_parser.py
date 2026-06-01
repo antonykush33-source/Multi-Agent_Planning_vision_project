@@ -2,12 +2,6 @@
 map_parser.py
 =============
 Loads occupancy grids from map.png files.
-
-Key improvement over previous version:
-  - load_grid_auto() works WITHOUT metrics.json by estimating the cell
-    grid size directly from the image (counts repeating obstacle columns/rows).
-  - load_grid_cell_resolution() still works with metrics.json when available.
-  - Both functions handle thin-wall mazes via centre-pixel sampling.
 """
 
 import cv2
