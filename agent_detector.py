@@ -18,7 +18,7 @@ import json
 from typing import List, Dict, Tuple, Optional
 
 
-# ── helpers ───────────────────────────────────────────────────────────────────
+# === helpers ================================
 
 def find_map_region(img: np.ndarray) -> Tuple[int, int, int, int]:
     """
@@ -78,7 +78,7 @@ def _dominant_hue(hsv_patch: np.ndarray, mask: np.ndarray) -> float:
     return mean_angle / 2.0  # back to 0-180
 
 
-# ── main blob detector ────────────────────────────────────────────────────────
+# === main blob detector ================================
 
 def _extract_blobs(img: np.ndarray,
                    map_region: Tuple[int, int, int, int],
@@ -224,7 +224,7 @@ def _match_agents_to_blobs(agent_blobs: List[Dict],
     return results
 
 
-# ── P/D marker detection ──────────────────────────────────────────────────────
+# === P/D marker detection ================================
 
 def detect_markers(preview_path: str,
                    scenario_path: str,
@@ -301,7 +301,7 @@ def detect_markers(preview_path: str,
     return results
 
 
-# ── public API ────────────────────────────────────────────────────────────────
+# === public API ================================
 
 def detect_agents(preview_path: str,
                   scenario_path: str,
@@ -348,7 +348,7 @@ def print_detection_results(results: List[Dict]) -> None:
     print("=" * 55)
 
 
-# ── module self-test ──────────────────────────────────────────────────────────
+# === module self-test ================================
 if __name__ == "__main__":
     import sys, os
     sys.path.insert(0, ".")
