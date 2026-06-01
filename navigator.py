@@ -39,8 +39,8 @@ def astar(grid, start, goal):
 
 def bug2(grid, start, goal, max_steps=50000):
     """
-    Bug2: движение по M-линии + обход стен.
-    Застревание определяется по количеству возвратов в hit_point.
+    Bug 2: M-line movement + wall crawling.
+    Stuckness is determined by the number of hit_point returns..
     """
     gh, gw = grid.shape
     DIRS = [(1,0),(0,1),(-1,0),(0,-1)]
@@ -71,8 +71,8 @@ def bug2(grid, start, goal, max_steps=50000):
     hit_point = None
     hit_dist  = None
     wall_dir  = (1,0)
-    hit_visits = 0          # сколько раз вернулись в hit_point
-    steps_in_wall = 0       # шагов в режиме обхода
+    hit_visits = 0          # How many times did you return to hit_point?
+    steps_in_wall = 0       # steps in bypass
 
     for _ in range(max_steps):
         if (x,y) == goal:
@@ -99,14 +99,14 @@ def bug2(grid, start, goal, max_steps=50000):
             curr_dist = mdist(x,y,goal[0],goal[1])
             not_entry = (x,y) != hit_point
 
-            # Выход из обхода: на M-линии И ближе к цели
+            # Exit from the bypass: on the M-line and closer to the goal
             if not_entry and on_m_line(x,y) and curr_dist < hit_dist:
                 mode = "to_goal"
                 hit_visits = 0
                 steps_in_wall = 0
                 continue
 
-            # Застревание: вернулись в hit_point второй раз
+            # Stuck: Returned to hit_point for the second time
             if (x,y) == hit_point and steps_in_wall > 10:
                 hit_visits += 1
                 if hit_visits >= 2:
@@ -132,8 +132,8 @@ def bug2(grid, start, goal, max_steps=50000):
 
 def wedgebug(grid, start, goal, wedge_depth=5, max_steps=50000):
     """
-    WedgeBug: клин обзора + M-линия.
-    Выходит из обхода когда цель видна в клине ИЛИ на M-линии.
+    WedgeBug: Vision wedge + M-line.
+    Breaks flank when a target is visible in the vision wedge OR on the M-line
     """
     gh, gw = grid.shape
     DIRS = [(1,0),(0,1),(-1,0),(0,-1)]
@@ -205,7 +205,7 @@ def wedgebug(grid, start, goal, wedge_depth=5, max_steps=50000):
             not_entry = (x,y) != hit_point
             closer    = curr_dist < hit_dist
 
-            # Выход: (M-линия ИЛИ клин видит цель) И ближе
+            # Output: (M-line OR wedge sees target) And closer
             if not_entry and closer and (on_m_line(x,y) or wedge_visible(x,y)):
                 mode = "to_goal"
                 hit_visits = 0
@@ -237,8 +237,8 @@ def wedgebug(grid, start, goal, wedge_depth=5, max_steps=50000):
 
 def fuzzybug(grid, start, goal, sensor_range=5, max_steps=50000):
     """
-    FuzzyBug: нечёткое смешение тяготения к цели и отталкивания от стен.
-    При застревании использует A* для выхода из локального минимума.
+    FuzzyBug: a fuzzy blend of attraction to the target and repulsion from walls.
+    When stuck, it uses A* to escape a local minimum.
     """
     gh, gw = grid.shape
     DIRS   = [(1,0),(0,1),(-1,0),(0,-1)]
@@ -345,8 +345,8 @@ def plan_all_agents(grid, agents_info, algorithm="astar"):
 
 def resolve_conflicts(paths_dict, agent_ids):
     """
-    Приоритетное разрешение столкновений.
-    Агент с меньшим индексом имеет приоритет.
+    Priority collision resolution.
+    The agent with the lower index has priority.
     """
     resolved = {aid: list(paths_dict[aid]) for aid in agent_ids}
 
