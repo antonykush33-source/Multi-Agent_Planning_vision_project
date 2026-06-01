@@ -5,9 +5,9 @@ Entry point for the CV pipeline.
 
 Usage:
     python3 main.py                  # run all discovered cases
-    python3 main.py --case 1         # specific case (1-based index)
-    python3 main.py --case 1 --show  # with visualisation
-    python3 main.py --eval           # run CV evaluation (accuracy + timing)
+    python3 main.py --case 1          # specific case (1-based index)
+    python3 main.py --case 1 --show   # with visualisation
+    python3 main.py --eval            # run CV evaluation (accuracy + timing)
     python3 main.py --list           # list available cases
 """
 
@@ -21,7 +21,7 @@ from agent_detector import detect_agents, detect_markers
 from visualizer     import show_dual_window
 
 
-# ── case discovery ─────────────────────────────────────────────────────────────
+# === case discovery ====================================================
 
 def discover_cases(data_dir: str = "data"):
     if not os.path.exists(data_dir):
@@ -33,7 +33,7 @@ def discover_cases(data_dir: str = "data"):
     ])
 
 
-# ── single case ────────────────────────────────────────────────────────────────
+# === single case ========================================================
 
 def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
     """
@@ -51,7 +51,7 @@ def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
     print(f"  CASE: {case_name}")
     print(f"{'='*55}")
 
-    # ── Step 1: Map ────────────────────────────────────────────
+    # === Step 1: Map ======================================================
     t0 = time.perf_counter()
     grid, gw, gh = load_grid_auto(map_path, metrics_path)
     scenario     = load_scenario(sc_path)
@@ -59,7 +59,7 @@ def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
 
     print_grid_info(grid, scenario)
 
-    # ── Step 2: Agent positions ────────────────────────────────
+    # === Step 2: Agent positions ===========================================
     t1 = time.perf_counter()
 
     if use_cv_detection and os.path.exists(preview_path):
@@ -73,7 +73,7 @@ def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
 
     t_agents = (time.perf_counter() - t1) * 1000
 
-    # ── Step 3: P/D markers (MAPD only) ───────────────────────
+    # === Step 3: P/D markers (MAPD only) ===================================
     markers    = []
     t_markers  = 0.0
     sc_type    = scenario.get("type", "")
@@ -82,7 +82,7 @@ def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
         markers   = detect_markers(preview_path, sc_path, gw, gh)
         t_markers = (time.perf_counter() - t2) * 1000
 
-    # ── Step 4: Print ──────────────────────────────────────────
+    # === Step 4: Print =====================================================
     print(f"\nPosition source  : {source}")
     print(f"Map parse time   : {t_map:.1f} ms")
     print(f"Agent detect time: {t_agents:.1f} ms")
@@ -101,7 +101,7 @@ def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
             tag = "CV " if m["found"] else "GT "
             print(f"  [{tag}] {m['id']:10s}/{m['type']:7s}  grid={m['grid']}")
 
-    # ── Step 5: Export ─────────────────────────────────────────
+    # === Step 5: Export ====================================================
     os.makedirs("output", exist_ok=True)
     result = {
         "case":        case_name,
@@ -133,7 +133,7 @@ def run_case(case_name: str, use_cv_detection: bool = True) -> dict:
     return result, grid, agents, gw, gh
 
 
-# ── all cases ──────────────────────────────────────────────────────────────────
+# === all cases ==============================================================
 
 def run_all_cases(cases):
     summary = []
@@ -156,7 +156,7 @@ def run_all_cases(cases):
     print("\nFull report: output/summary.json")
 
 
-# ── entry point ────────────────────────────────────────────────────────────────
+# === entry point ===============================================================
 
 if __name__ == "__main__":
     import argparse
