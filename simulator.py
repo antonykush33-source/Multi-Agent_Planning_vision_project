@@ -1,10 +1,10 @@
 """
 simulator.py — Multi-Agent Path Simulator
 ==========================================
-python3 simulator.py --case 1 --algo astar   # один алгоритм + окно восприятия
-python3 simulator.py --case 1 --algo all     # сравнение 4 алгоритмов (2x2)
+python3 simulator.py --case 1 --algo astar   # one algorithm + perception window
+python3 simulator.py --case 1 --algo all     # comparison of 4 algorithms (2x2)
 python3 simulator.py --list
---speed 40 (быстро) / 150 (медленно)
+--speed 40 (быстро) / 150 (slow)
 SPACE=start/pause  R=restart  Q=quit
 """
 
@@ -22,7 +22,7 @@ COLORS     = [
 CELL = 8
 
 
-# ── Загрузка ───────────────────────────────────────────────────────────────────
+# === Loading =========================================================
 
 def discover_cases(data_dir="data"):
     if not os.path.exists(data_dir):
@@ -58,7 +58,7 @@ def plan_path(grid, start, goal, algo):
     return fn[algo](grid, start, goal)
 
 
-# ── Отрисовка ──────────────────────────────────────────────────────────────────
+# === Rendering =========================================================
 
 def make_base(grid):
     h, w = grid.shape
@@ -88,9 +88,9 @@ def draw_robot(img, pos, color, label, goal=None, prev_pos=None):
     cx, cy = cc(x, y)
     s = max(4, CELL - 1)
     r = max(2, s // 3)
-    # Тело
+    # Body
     rounded_rect(img, cx, cy, s, color, r)
-    # Глаз — смотрит к цели или в направлении движения
+    # Eye - looks towards the target or in the direction of movement
     dx, dy = 0, -1
     if goal and goal != pos:
         gx, gy = goal
@@ -103,10 +103,10 @@ def draw_robot(img, pos, color, label, goal=None, prev_pos=None):
     ex, ey = int(cx + s*0.45*dx), int(cy + s*0.45*dy)
     cv2.circle(img, (ex, ey), max(2, s//3), (255, 255, 255), -1)
     cv2.circle(img, (ex, ey), max(1, s//5), (40,  40,  40),  -1)
-    # Контур
+    # Circuit
     rounded_rect(img, cx, cy, s,   (255, 255, 255), r)
     rounded_rect(img, cx, cy, s-1, color,           r)
-    # Подпись
+    # label
     lx, ly = cx + s + 3, cy + 5
     cv2.putText(img, label, (lx+1, ly+1), cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0,0,0), 2)
     cv2.putText(img, label, (lx,   ly),   cv2.FONT_HERSHEY_SIMPLEX, 0.35, color,   1)
@@ -118,10 +118,10 @@ def draw_goal(img, pos, color):
 
 
 def draw_trail(img, path, step, color):
-    # Остаток — серые точки
+    # The remainder (gray dots)
     for t in range(min(step+1, len(path)), len(path)):
         cv2.circle(img, cc(*path[t]), 1, (180, 180, 180), -1)
-    # Хвост — полупрозрачный
+    # The tail (translucent)
     tail = max(0, step - 20)
     for t in range(tail, min(step, len(path))):
         alpha = 0.1 + 0.6 * (t - tail) / max(1, step - tail)
@@ -149,14 +149,14 @@ def draw_perception(img_base, grid, agents, algo):
         cx, cy   = cc(px, py)
         gcx, gcy = cc(*goal)
 
-        # Весь путь серым
+        # All the way in gray
         for t in range(len(path)-1):
             cv2.line(img, cc(*path[t]), cc(*path[t+1]), (180, 180, 180), 1)
-        # Пройденная часть цветом
+        # Coloring the part we ve moved
         for t in range(min(step, len(path)-1)):
             cv2.line(img, cc(*path[t]), cc(*path[t+1]), color, 1)
 
-        # Алго-специфичный оверлей
+        # Algo-specific overlay
         if algo == "bug2":
             start_pos = ag.path[0]
             cv2.line(img, cc(*start_pos), (gcx, gcy), (200, 200, 100), 1)
@@ -206,7 +206,7 @@ def status_bar(img, text):
     return np.vstack([img, bar])
 
 
-# ── Состояние агента ───────────────────────────────────────────────────────────
+# === Simulation state =========================================================
 
 class AgentState:
     def __init__(self, aid, start, goal, task_queue, is_mapd):
@@ -248,7 +248,7 @@ class AgentState:
         return self.at_goal() and self.phase is None
 
 
-# ── Состояние симуляции ────────────────────────────────────────────────────────
+# === Simulation state =========================================================
 
 class SimState:
     def __init__(self, grid, agents_raw, task_queue_src, sc_type, algo):
@@ -274,7 +274,7 @@ class SimState:
             ag.set_path(resolved[ag.id])
 
     def tick(self):
-        # Проверяем достижение целей и переключаем фазы
+        # We check the achievement of goals and switch phases
         for ag in self.agents:
             if not ag.at_goal(): continue
             if ag.phase == "pickup":
@@ -286,7 +286,7 @@ class SimState:
                     ag.phase = None
                 else:
                     self._plan(ag)
-        # Двигаем
+        # moving
         for ag in self.agents:
             ag.advance()
 
@@ -313,7 +313,7 @@ class SimState:
         return all(ag.done() for ag in self.agents)
 
 
-# ── Режим: один алгоритм ───────────────────────────────────────────────────────
+# === Mode: single algorithm =========================================================
 
 def run_single(case_name, algo, speed_ms=80):
     grid, gw, gh, agents_raw, task_queue, sc_type = load_case(case_name)
@@ -330,7 +330,7 @@ def run_single(case_name, algo, speed_ms=80):
         sim_img  = title_bar(sim.draw_sim(base),  "Simulation")
         perc_img = title_bar(sim.draw_perc(base), f"CV Perception — {ALGO_NAMES[algo]}")
 
-        # Выравниваем высоты
+        # Aligning the heights
         h1, h2 = sim_img.shape[0], perc_img.shape[0]
         mh = max(h1, h2)
         if h1 < mh: sim_img  = np.vstack([sim_img,  np.zeros((mh-h1, sim_img.shape[1],  3), np.uint8)])
@@ -357,7 +357,7 @@ def run_single(case_name, algo, speed_ms=80):
     cv2.destroyAllWindows()
 
 
-# ── Режим: сравнение 4 алгоритмов ─────────────────────────────────────────────
+# === Mode: comparison of 4 algorithms =================================================
 
 def run_compare(case_name, speed_ms=80):
     grid, gw, gh, agents_raw, task_queue, sc_type = load_case(case_name)
@@ -378,7 +378,7 @@ def run_compare(case_name, speed_ms=80):
         for algo in ALGOS:
             s   = sims[algo]
             img = s.draw_sim(base)
-            # Подпись алгоритма и счётчик
+            # Algorithm signature and counter
             cv2.rectangle(img, (0,0), (110, 18), (30,30,30), -1)
             cv2.putText(img, ALGO_NAMES[algo], (4, 13),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.42, (255,220,80), 1)
@@ -407,7 +407,7 @@ def run_compare(case_name, speed_ms=80):
     cv2.destroyAllWindows()
 
 
-# ── Entry point ────────────────────────────────────────────────────────────────
+# === Entry point =========================================================
 
 if __name__ == "__main__":
     cases = discover_cases()
