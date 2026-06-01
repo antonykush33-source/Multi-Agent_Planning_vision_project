@@ -1,0 +1,54 @@
+{
+  "case": "case_003_maze_mapf",
+  "scenario": "mapf",
+  "grid_size": {
+    "width": 81,
+    "height": 61
+  },
+  "num_agents": 6,
+  "agents": [
+    {
+      "id": "agent_1",
+      "grid_x": 10,
+      "grid_y": 15,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_2",
+      "grid_x": 5,
+      "grid_y": 35,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_3",
+      "grid_x": 13,
+      "grid_y": 20,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_4",
+      "grid_x": 21,
+      "grid_y": 26,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_5",
+      "grid_x": 76,
+      "grid_y": 3,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_6",
+      "grid_x": 1,
+      "grid_y": 55,
+      "cv_detected": true
+    }
+  ],
+  "markers": [],
+  "timing_ms": {
+    "map_parse": 2.04,
+    "agent_detect": 32.16,
+    "marker_detect": 0.0,
+    "total": 34.2
+  }
+}

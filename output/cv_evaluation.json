@@ -1,0 +1,728 @@
+[
+  {
+    "case": "case_001_warehouse_mapd",
+    "map": {
+      "grid_size": "80x60",
+      "obstacle_density": 0.2556,
+      "gt_density": 0.2556,
+      "density_error": 0.0,
+      "connectivity": 1.0,
+      "parse_time_ms": 9.89
+    },
+    "agents": {
+      "total": 5,
+      "detected_cv": 4,
+      "detection_rate": 0.8,
+      "mean_error": 22.25,
+      "max_error": 67.0,
+      "detect_time_ms": 39.66,
+      "per_agent": [
+        {
+          "id": "agent_1",
+          "cv_grid": [
+            30,
+            45
+          ],
+          "gt_grid": [
+            27,
+            55
+          ],
+          "error": 13,
+          "found_cv": true
+        },
+        {
+          "id": "agent_2",
+          "cv_grid": [
+            33,
+            54
+          ],
+          "gt_grid": [
+            33,
+            54
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "agent_3",
+          "cv_grid": [
+            21,
+            30
+          ],
+          "gt_grid": [
+            29,
+            29
+          ],
+          "error": 9,
+          "found_cv": true
+        },
+        {
+          "id": "agent_4",
+          "cv_grid": [
+            57,
+            34
+          ],
+          "gt_grid": [
+            21,
+            3
+          ],
+          "error": 67,
+          "found_cv": true
+        },
+        {
+          "id": "agent_5",
+          "cv_grid": [
+            71,
+            56
+          ],
+          "gt_grid": [
+            71,
+            56
+          ],
+          "error": 0,
+          "found_cv": false
+        }
+      ]
+    },
+    "markers": {
+      "total": 20,
+      "detected_cv": 9,
+      "detection_rate": 0.45,
+      "mean_error": 0.0,
+      "max_error": 0.0,
+      "detect_time_ms": 35.53,
+      "per_marker": [
+        {
+          "id": "task_1",
+          "type": "pickup",
+          "cv_grid": [
+            75,
+            22
+          ],
+          "gt_grid": [
+            75,
+            22
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_1",
+          "type": "dropoff",
+          "cv_grid": [
+            76,
+            49
+          ],
+          "gt_grid": [
+            76,
+            49
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_2",
+          "type": "pickup",
+          "cv_grid": [
+            11,
+            55
+          ],
+          "gt_grid": [
+            11,
+            55
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_2",
+          "type": "dropoff",
+          "cv_grid": [
+            15,
+            54
+          ],
+          "gt_grid": [
+            15,
+            54
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_3",
+          "type": "pickup",
+          "cv_grid": [
+            30,
+            45
+          ],
+          "gt_grid": [
+            30,
+            45
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_3",
+          "type": "dropoff",
+          "cv_grid": [
+            12,
+            47
+          ],
+          "gt_grid": [
+            12,
+            47
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_4",
+          "type": "pickup",
+          "cv_grid": [
+            4,
+            29
+          ],
+          "gt_grid": [
+            4,
+            29
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_4",
+          "type": "dropoff",
+          "cv_grid": [
+            66,
+            27
+          ],
+          "gt_grid": [
+            66,
+            27
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_5",
+          "type": "pickup",
+          "cv_grid": [
+            48,
+            13
+          ],
+          "gt_grid": [
+            48,
+            13
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_5",
+          "type": "dropoff",
+          "cv_grid": [
+            62,
+            41
+          ],
+          "gt_grid": [
+            62,
+            41
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_6",
+          "type": "pickup",
+          "cv_grid": [
+            47,
+            41
+          ],
+          "gt_grid": [
+            47,
+            41
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_6",
+          "type": "dropoff",
+          "cv_grid": [
+            22,
+            15
+          ],
+          "gt_grid": [
+            22,
+            15
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_7",
+          "type": "pickup",
+          "cv_grid": [
+            12,
+            7
+          ],
+          "gt_grid": [
+            12,
+            7
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_7",
+          "type": "dropoff",
+          "cv_grid": [
+            40,
+            31
+          ],
+          "gt_grid": [
+            40,
+            31
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_8",
+          "type": "pickup",
+          "cv_grid": [
+            21,
+            30
+          ],
+          "gt_grid": [
+            21,
+            30
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_8",
+          "type": "dropoff",
+          "cv_grid": [
+            30,
+            5
+          ],
+          "gt_grid": [
+            30,
+            5
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_9",
+          "type": "pickup",
+          "cv_grid": [
+            57,
+            7
+          ],
+          "gt_grid": [
+            57,
+            7
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_9",
+          "type": "dropoff",
+          "cv_grid": [
+            66,
+            38
+          ],
+          "gt_grid": [
+            66,
+            38
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "task_10",
+          "type": "pickup",
+          "cv_grid": [
+            57,
+            34
+          ],
+          "gt_grid": [
+            57,
+            34
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "task_10",
+          "type": "dropoff",
+          "cv_grid": [
+            12,
+            27
+          ],
+          "gt_grid": [
+            12,
+            27
+          ],
+          "error": 0,
+          "found_cv": true
+        }
+      ]
+    },
+    "timing_ms": {
+      "map_parse": 9.89,
+      "agent_detect": 39.66,
+      "marker_detect": 35.53,
+      "total": 85.08
+    }
+  },
+  {
+    "case": "case_002_bottleneck_stress",
+    "map": {
+      "grid_size": "80x60",
+      "obstacle_density": 0.1046,
+      "gt_density": 0.1046,
+      "density_error": 0.0,
+      "connectivity": 1.0,
+      "parse_time_ms": 2.1
+    },
+    "agents": {
+      "total": 6,
+      "detected_cv": 6,
+      "detection_rate": 1.0,
+      "mean_error": 30.333,
+      "max_error": 49.0,
+      "detect_time_ms": 31.65,
+      "per_agent": [
+        {
+          "id": "agent_1",
+          "cv_grid": [
+            9,
+            47
+          ],
+          "gt_grid": [
+            9,
+            47
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "agent_2",
+          "cv_grid": [
+            46,
+            10
+          ],
+          "gt_grid": [
+            9,
+            11
+          ],
+          "error": 38,
+          "found_cv": true
+        },
+        {
+          "id": "agent_3",
+          "cv_grid": [
+            9,
+            11
+          ],
+          "gt_grid": [
+            14,
+            49
+          ],
+          "error": 43,
+          "found_cv": true
+        },
+        {
+          "id": "agent_4",
+          "cv_grid": [
+            50,
+            31
+          ],
+          "gt_grid": [
+            3,
+            33
+          ],
+          "error": 49,
+          "found_cv": true
+        },
+        {
+          "id": "agent_5",
+          "cv_grid": [
+            3,
+            33
+          ],
+          "gt_grid": [
+            16,
+            44
+          ],
+          "error": 24,
+          "found_cv": true
+        },
+        {
+          "id": "agent_6",
+          "cv_grid": [
+            16,
+            44
+          ],
+          "gt_grid": [
+            21,
+            21
+          ],
+          "error": 28,
+          "found_cv": true
+        }
+      ]
+    },
+    "markers": null,
+    "timing_ms": {
+      "map_parse": 2.1,
+      "agent_detect": 31.65,
+      "marker_detect": 0.0,
+      "total": 33.75
+    }
+  },
+  {
+    "case": "case_003_maze_mapf",
+    "map": {
+      "grid_size": "81x61",
+      "obstacle_density": 0.5133,
+      "gt_density": 0.5133,
+      "density_error": 0.0,
+      "connectivity": 1.0,
+      "parse_time_ms": 1.99
+    },
+    "agents": {
+      "total": 6,
+      "detected_cv": 6,
+      "detection_rate": 1.0,
+      "mean_error": 55.333,
+      "max_error": 127.0,
+      "detect_time_ms": 31.28,
+      "per_agent": [
+        {
+          "id": "agent_1",
+          "cv_grid": [
+            10,
+            15
+          ],
+          "gt_grid": [
+            76,
+            3
+          ],
+          "error": 78,
+          "found_cv": true
+        },
+        {
+          "id": "agent_2",
+          "cv_grid": [
+            5,
+            35
+          ],
+          "gt_grid": [
+            13,
+            20
+          ],
+          "error": 23,
+          "found_cv": true
+        },
+        {
+          "id": "agent_3",
+          "cv_grid": [
+            13,
+            20
+          ],
+          "gt_grid": [
+            47,
+            41
+          ],
+          "error": 55,
+          "found_cv": true
+        },
+        {
+          "id": "agent_4",
+          "cv_grid": [
+            21,
+            26
+          ],
+          "gt_grid": [
+            21,
+            26
+          ],
+          "error": 0,
+          "found_cv": true
+        },
+        {
+          "id": "agent_5",
+          "cv_grid": [
+            76,
+            3
+          ],
+          "gt_grid": [
+            1,
+            55
+          ],
+          "error": 127,
+          "found_cv": true
+        },
+        {
+          "id": "agent_6",
+          "cv_grid": [
+            1,
+            55
+          ],
+          "gt_grid": [
+            10,
+            15
+          ],
+          "error": 49,
+          "found_cv": true
+        }
+      ]
+    },
+    "markers": null,
+    "timing_ms": {
+      "map_parse": 1.99,
+      "agent_detect": 31.28,
+      "marker_detect": 0.0,
+      "total": 33.27
+    }
+  },
+  {
+    "case": "case_004_thin_walls_mapf",
+    "map": {
+      "grid_size": "80x60",
+      "obstacle_density": 0.1131,
+      "gt_density": 0.1131,
+      "density_error": 0.0,
+      "connectivity": 1.0,
+      "parse_time_ms": 2.01
+    },
+    "agents": {
+      "total": 8,
+      "detected_cv": 6,
+      "detection_rate": 0.75,
+      "mean_error": 61.333,
+      "max_error": 84.0,
+      "detect_time_ms": 33.91,
+      "per_agent": [
+        {
+          "id": "agent_1",
+          "cv_grid": [
+            73,
+            30
+          ],
+          "gt_grid": [
+            24,
+            18
+          ],
+          "error": 61,
+          "found_cv": true
+        },
+        {
+          "id": "agent_2",
+          "cv_grid": [
+            39,
+            16
+          ],
+          "gt_grid": [
+            75,
+            37
+          ],
+          "error": 57,
+          "found_cv": true
+        },
+        {
+          "id": "agent_3",
+          "cv_grid": [
+            75,
+            37
+          ],
+          "gt_grid": [
+            71,
+            22
+          ],
+          "error": 19,
+          "found_cv": true
+        },
+        {
+          "id": "agent_4",
+          "cv_grid": [
+            2,
+            20
+          ],
+          "gt_grid": [
+            58,
+            28
+          ],
+          "error": 64,
+          "found_cv": true
+        },
+        {
+          "id": "agent_5",
+          "cv_grid": [
+            58,
+            28
+          ],
+          "gt_grid": [
+            2,
+            56
+          ],
+          "error": 84,
+          "found_cv": true
+        },
+        {
+          "id": "agent_6",
+          "cv_grid": [
+            73,
+            30
+          ],
+          "gt_grid": [
+            73,
+            30
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "agent_7",
+          "cv_grid": [
+            19,
+            2
+          ],
+          "gt_grid": [
+            19,
+            2
+          ],
+          "error": 0,
+          "found_cv": false
+        },
+        {
+          "id": "agent_8",
+          "cv_grid": [
+            48,
+            48
+          ],
+          "gt_grid": [
+            2,
+            11
+          ],
+          "error": 83,
+          "found_cv": true
+        }
+      ]
+    },
+    "markers": null,
+    "timing_ms": {
+      "map_parse": 2.01,
+      "agent_detect": 33.91,
+      "marker_detect": 0.0,
+      "total": 35.93
+    }
+  }
+]

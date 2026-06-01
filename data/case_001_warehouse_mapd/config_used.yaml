@@ -1,0 +1,18 @@
+map:
+  type: warehouse
+  width: 80
+  height: 60
+  obstacle_density: 0.3
+scenario:
+  type: mapd
+  num_agents: 5
+  num_tasks: 10
+validation:
+  min_start_distance: 6
+  min_goal_distance: 4
+  min_wall_distance: 2
+export:
+  save_png: true
+  save_json: true
+  save_preview: true
+seed: 42

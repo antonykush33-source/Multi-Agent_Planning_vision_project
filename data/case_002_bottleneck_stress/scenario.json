@@ -1,0 +1,72 @@
+{
+  "type": "bottleneck_stress",
+  "num_agents": 6,
+  "agents": [
+    {
+      "id": "agent_1",
+      "start": [
+        9,
+        47
+      ],
+      "goal": [
+        72,
+        11
+      ]
+    },
+    {
+      "id": "agent_2",
+      "start": [
+        9,
+        11
+      ],
+      "goal": [
+        50,
+        31
+      ]
+    },
+    {
+      "id": "agent_3",
+      "start": [
+        14,
+        49
+      ],
+      "goal": [
+        76,
+        4
+      ]
+    },
+    {
+      "id": "agent_4",
+      "start": [
+        3,
+        33
+      ],
+      "goal": [
+        53,
+        7
+      ]
+    },
+    {
+      "id": "agent_5",
+      "start": [
+        16,
+        44
+      ],
+      "goal": [
+        69,
+        53
+      ]
+    },
+    {
+      "id": "agent_6",
+      "start": [
+        21,
+        21
+      ],
+      "goal": [
+        46,
+        10
+      ]
+    }
+  ]
+}

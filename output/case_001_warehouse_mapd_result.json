@@ -1,0 +1,189 @@
+{
+  "case": "case_001_warehouse_mapd",
+  "scenario": "mapd",
+  "grid_size": {
+    "width": 80,
+    "height": 60
+  },
+  "num_agents": 5,
+  "agents": [
+    {
+      "id": "agent_1",
+      "grid_x": 30,
+      "grid_y": 45,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_2",
+      "grid_x": 33,
+      "grid_y": 54,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_3",
+      "grid_x": 21,
+      "grid_y": 30,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_4",
+      "grid_x": 57,
+      "grid_y": 34,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_5",
+      "grid_x": 71,
+      "grid_y": 56,
+      "cv_detected": false
+    }
+  ],
+  "markers": [
+    {
+      "id": "task_1",
+      "type": "pickup",
+      "grid_x": 75,
+      "grid_y": 22,
+      "cv_detected": false
+    },
+    {
+      "id": "task_1",
+      "type": "dropoff",
+      "grid_x": 76,
+      "grid_y": 49,
+      "cv_detected": false
+    },
+    {
+      "id": "task_2",
+      "type": "pickup",
+      "grid_x": 11,
+      "grid_y": 55,
+      "cv_detected": false
+    },
+    {
+      "id": "task_2",
+      "type": "dropoff",
+      "grid_x": 15,
+      "grid_y": 54,
+      "cv_detected": true
+    },
+    {
+      "id": "task_3",
+      "type": "pickup",
+      "grid_x": 30,
+      "grid_y": 45,
+      "cv_detected": false
+    },
+    {
+      "id": "task_3",
+      "type": "dropoff",
+      "grid_x": 12,
+      "grid_y": 47,
+      "cv_detected": true
+    },
+    {
+      "id": "task_4",
+      "type": "pickup",
+      "grid_x": 4,
+      "grid_y": 29,
+      "cv_detected": false
+    },
+    {
+      "id": "task_4",
+      "type": "dropoff",
+      "grid_x": 66,
+      "grid_y": 27,
+      "cv_detected": true
+    },
+    {
+      "id": "task_5",
+      "type": "pickup",
+      "grid_x": 48,
+      "grid_y": 13,
+      "cv_detected": false
+    },
+    {
+      "id": "task_5",
+      "type": "dropoff",
+      "grid_x": 62,
+      "grid_y": 41,
+      "cv_detected": true
+    },
+    {
+      "id": "task_6",
+      "type": "pickup",
+      "grid_x": 47,
+      "grid_y": 41,
+      "cv_detected": false
+    },
+    {
+      "id": "task_6",
+      "type": "dropoff",
+      "grid_x": 22,
+      "grid_y": 15,
+      "cv_detected": true
+    },
+    {
+      "id": "task_7",
+      "type": "pickup",
+      "grid_x": 12,
+      "grid_y": 7,
+      "cv_detected": false
+    },
+    {
+      "id": "task_7",
+      "type": "dropoff",
+      "grid_x": 40,
+      "grid_y": 31,
+      "cv_detected": true
+    },
+    {
+      "id": "task_8",
+      "type": "pickup",
+      "grid_x": 21,
+      "grid_y": 30,
+      "cv_detected": false
+    },
+    {
+      "id": "task_8",
+      "type": "dropoff",
+      "grid_x": 30,
+      "grid_y": 5,
+      "cv_detected": true
+    },
+    {
+      "id": "task_9",
+      "type": "pickup",
+      "grid_x": 57,
+      "grid_y": 7,
+      "cv_detected": false
+    },
+    {
+      "id": "task_9",
+      "type": "dropoff",
+      "grid_x": 66,
+      "grid_y": 38,
+      "cv_detected": true
+    },
+    {
+      "id": "task_10",
+      "type": "pickup",
+      "grid_x": 57,
+      "grid_y": 34,
+      "cv_detected": false
+    },
+    {
+      "id": "task_10",
+      "type": "dropoff",
+      "grid_x": 12,
+      "grid_y": 27,
+      "cv_detected": true
+    }
+  ],
+  "timing_ms": {
+    "map_parse": 2.37,
+    "agent_detect": 39.19,
+    "marker_detect": 36.15,
+    "total": 77.7
+  }
+}

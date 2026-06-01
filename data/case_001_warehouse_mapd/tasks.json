@@ -1,0 +1,122 @@
+[
+  {
+    "id": "task_1",
+    "pickup": [
+      75,
+      22
+    ],
+    "dropoff": [
+      76,
+      49
+    ],
+    "release_time": 0
+  },
+  {
+    "id": "task_2",
+    "pickup": [
+      11,
+      55
+    ],
+    "dropoff": [
+      15,
+      54
+    ],
+    "release_time": 5
+  },
+  {
+    "id": "task_3",
+    "pickup": [
+      30,
+      45
+    ],
+    "dropoff": [
+      12,
+      47
+    ],
+    "release_time": 10
+  },
+  {
+    "id": "task_4",
+    "pickup": [
+      4,
+      29
+    ],
+    "dropoff": [
+      66,
+      27
+    ],
+    "release_time": 15
+  },
+  {
+    "id": "task_5",
+    "pickup": [
+      48,
+      13
+    ],
+    "dropoff": [
+      62,
+      41
+    ],
+    "release_time": 20
+  },
+  {
+    "id": "task_6",
+    "pickup": [
+      47,
+      41
+    ],
+    "dropoff": [
+      22,
+      15
+    ],
+    "release_time": 25
+  },
+  {
+    "id": "task_7",
+    "pickup": [
+      12,
+      7
+    ],
+    "dropoff": [
+      40,
+      31
+    ],
+    "release_time": 30
+  },
+  {
+    "id": "task_8",
+    "pickup": [
+      21,
+      30
+    ],
+    "dropoff": [
+      30,
+      5
+    ],
+    "release_time": 35
+  },
+  {
+    "id": "task_9",
+    "pickup": [
+      57,
+      7
+    ],
+    "dropoff": [
+      66,
+      38
+    ],
+    "release_time": 40
+  },
+  {
+    "id": "task_10",
+    "pickup": [
+      57,
+      34
+    ],
+    "dropoff": [
+      12,
+      27
+    ],
+    "release_time": 45
+  }
+]

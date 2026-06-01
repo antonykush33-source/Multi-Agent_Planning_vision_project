@@ -1,0 +1,54 @@
+{
+  "case": "case_002_bottleneck_stress",
+  "scenario": "bottleneck_stress",
+  "grid_size": {
+    "width": 80,
+    "height": 60
+  },
+  "num_agents": 6,
+  "agents": [
+    {
+      "id": "agent_1",
+      "grid_x": 9,
+      "grid_y": 47,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_2",
+      "grid_x": 46,
+      "grid_y": 10,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_3",
+      "grid_x": 9,
+      "grid_y": 11,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_4",
+      "grid_x": 50,
+      "grid_y": 31,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_5",
+      "grid_x": 3,
+      "grid_y": 33,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_6",
+      "grid_x": 16,
+      "grid_y": 44,
+      "cv_detected": true
+    }
+  ],
+  "markers": [],
+  "timing_ms": {
+    "map_parse": 2.12,
+    "agent_detect": 31.1,
+    "marker_detect": 0.0,
+    "total": 33.22
+  }
+}

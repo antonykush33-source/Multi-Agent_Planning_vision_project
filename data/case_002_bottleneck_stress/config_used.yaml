@@ -1,0 +1,16 @@
+map:
+  type: bottleneck
+  width: 80
+  height: 60
+scenario:
+  type: bottleneck_stress
+  num_agents: 6
+validation:
+  min_start_distance: 5
+  min_goal_distance: 5
+  min_wall_distance: 2
+export:
+  save_png: true
+  save_json: true
+  save_preview: true
+seed: 42

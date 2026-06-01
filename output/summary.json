@@ -1,0 +1,365 @@
+[
+  {
+    "case": "case_001_warehouse_mapd",
+    "scenario": "mapd",
+    "grid_size": {
+      "width": 80,
+      "height": 60
+    },
+    "num_agents": 5,
+    "agents": [
+      {
+        "id": "agent_1",
+        "grid_x": 30,
+        "grid_y": 45,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_2",
+        "grid_x": 33,
+        "grid_y": 54,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_3",
+        "grid_x": 21,
+        "grid_y": 30,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_4",
+        "grid_x": 57,
+        "grid_y": 34,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_5",
+        "grid_x": 71,
+        "grid_y": 56,
+        "cv_detected": false
+      }
+    ],
+    "markers": [
+      {
+        "id": "task_1",
+        "type": "pickup",
+        "grid_x": 75,
+        "grid_y": 22,
+        "cv_detected": false
+      },
+      {
+        "id": "task_1",
+        "type": "dropoff",
+        "grid_x": 76,
+        "grid_y": 49,
+        "cv_detected": false
+      },
+      {
+        "id": "task_2",
+        "type": "pickup",
+        "grid_x": 11,
+        "grid_y": 55,
+        "cv_detected": false
+      },
+      {
+        "id": "task_2",
+        "type": "dropoff",
+        "grid_x": 15,
+        "grid_y": 54,
+        "cv_detected": true
+      },
+      {
+        "id": "task_3",
+        "type": "pickup",
+        "grid_x": 30,
+        "grid_y": 45,
+        "cv_detected": false
+      },
+      {
+        "id": "task_3",
+        "type": "dropoff",
+        "grid_x": 12,
+        "grid_y": 47,
+        "cv_detected": true
+      },
+      {
+        "id": "task_4",
+        "type": "pickup",
+        "grid_x": 4,
+        "grid_y": 29,
+        "cv_detected": false
+      },
+      {
+        "id": "task_4",
+        "type": "dropoff",
+        "grid_x": 66,
+        "grid_y": 27,
+        "cv_detected": true
+      },
+      {
+        "id": "task_5",
+        "type": "pickup",
+        "grid_x": 48,
+        "grid_y": 13,
+        "cv_detected": false
+      },
+      {
+        "id": "task_5",
+        "type": "dropoff",
+        "grid_x": 62,
+        "grid_y": 41,
+        "cv_detected": true
+      },
+      {
+        "id": "task_6",
+        "type": "pickup",
+        "grid_x": 47,
+        "grid_y": 41,
+        "cv_detected": false
+      },
+      {
+        "id": "task_6",
+        "type": "dropoff",
+        "grid_x": 22,
+        "grid_y": 15,
+        "cv_detected": true
+      },
+      {
+        "id": "task_7",
+        "type": "pickup",
+        "grid_x": 12,
+        "grid_y": 7,
+        "cv_detected": false
+      },
+      {
+        "id": "task_7",
+        "type": "dropoff",
+        "grid_x": 40,
+        "grid_y": 31,
+        "cv_detected": true
+      },
+      {
+        "id": "task_8",
+        "type": "pickup",
+        "grid_x": 21,
+        "grid_y": 30,
+        "cv_detected": false
+      },
+      {
+        "id": "task_8",
+        "type": "dropoff",
+        "grid_x": 30,
+        "grid_y": 5,
+        "cv_detected": true
+      },
+      {
+        "id": "task_9",
+        "type": "pickup",
+        "grid_x": 57,
+        "grid_y": 7,
+        "cv_detected": false
+      },
+      {
+        "id": "task_9",
+        "type": "dropoff",
+        "grid_x": 66,
+        "grid_y": 38,
+        "cv_detected": true
+      },
+      {
+        "id": "task_10",
+        "type": "pickup",
+        "grid_x": 57,
+        "grid_y": 34,
+        "cv_detected": false
+      },
+      {
+        "id": "task_10",
+        "type": "dropoff",
+        "grid_x": 12,
+        "grid_y": 27,
+        "cv_detected": true
+      }
+    ],
+    "timing_ms": {
+      "map_parse": 12.57,
+      "agent_detect": 46.23,
+      "marker_detect": 35.65,
+      "total": 94.45
+    }
+  },
+  {
+    "case": "case_002_bottleneck_stress",
+    "scenario": "bottleneck_stress",
+    "grid_size": {
+      "width": 80,
+      "height": 60
+    },
+    "num_agents": 6,
+    "agents": [
+      {
+        "id": "agent_1",
+        "grid_x": 9,
+        "grid_y": 47,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_2",
+        "grid_x": 46,
+        "grid_y": 10,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_3",
+        "grid_x": 9,
+        "grid_y": 11,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_4",
+        "grid_x": 50,
+        "grid_y": 31,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_5",
+        "grid_x": 3,
+        "grid_y": 33,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_6",
+        "grid_x": 16,
+        "grid_y": 44,
+        "cv_detected": true
+      }
+    ],
+    "markers": [],
+    "timing_ms": {
+      "map_parse": 2.12,
+      "agent_detect": 31.1,
+      "marker_detect": 0.0,
+      "total": 33.22
+    }
+  },
+  {
+    "case": "case_003_maze_mapf",
+    "scenario": "mapf",
+    "grid_size": {
+      "width": 81,
+      "height": 61
+    },
+    "num_agents": 6,
+    "agents": [
+      {
+        "id": "agent_1",
+        "grid_x": 10,
+        "grid_y": 15,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_2",
+        "grid_x": 5,
+        "grid_y": 35,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_3",
+        "grid_x": 13,
+        "grid_y": 20,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_4",
+        "grid_x": 21,
+        "grid_y": 26,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_5",
+        "grid_x": 76,
+        "grid_y": 3,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_6",
+        "grid_x": 1,
+        "grid_y": 55,
+        "cv_detected": true
+      }
+    ],
+    "markers": [],
+    "timing_ms": {
+      "map_parse": 2.04,
+      "agent_detect": 32.16,
+      "marker_detect": 0.0,
+      "total": 34.2
+    }
+  },
+  {
+    "case": "case_004_thin_walls_mapf",
+    "scenario": "mapf",
+    "grid_size": {
+      "width": 80,
+      "height": 60
+    },
+    "num_agents": 8,
+    "agents": [
+      {
+        "id": "agent_1",
+        "grid_x": 73,
+        "grid_y": 30,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_2",
+        "grid_x": 39,
+        "grid_y": 16,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_3",
+        "grid_x": 75,
+        "grid_y": 37,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_4",
+        "grid_x": 2,
+        "grid_y": 20,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_5",
+        "grid_x": 58,
+        "grid_y": 28,
+        "cv_detected": true
+      },
+      {
+        "id": "agent_6",
+        "grid_x": 73,
+        "grid_y": 30,
+        "cv_detected": false
+      },
+      {
+        "id": "agent_7",
+        "grid_x": 19,
+        "grid_y": 2,
+        "cv_detected": false
+      },
+      {
+        "id": "agent_8",
+        "grid_x": 48,
+        "grid_y": 48,
+        "cv_detected": true
+      }
+    ],
+    "markers": [],
+    "timing_ms": {
+      "map_parse": 1.91,
+      "agent_detect": 33.88,
+      "marker_detect": 0.0,
+      "total": 35.79
+    }
+  }
+]

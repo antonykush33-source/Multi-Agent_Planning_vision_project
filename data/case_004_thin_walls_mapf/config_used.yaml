@@ -1,0 +1,18 @@
+map:
+  type: thin_walls
+  width: 80
+  height: 60
+  num_obstacles: 35
+  max_wall_length: 12
+scenario:
+  type: mapf
+  num_agents: 8
+validation:
+  min_start_distance: 7
+  min_goal_distance: 7
+  min_wall_distance: 1
+export:
+  save_png: true
+  save_json: true
+  save_preview: true
+seed: 42

@@ -1,0 +1,42 @@
+{
+  "type": "mapd",
+  "num_agents": 5,
+  "num_tasks": 10,
+  "agents": [
+    {
+      "id": "agent_1",
+      "start": [
+        27,
+        55
+      ]
+    },
+    {
+      "id": "agent_2",
+      "start": [
+        33,
+        54
+      ]
+    },
+    {
+      "id": "agent_3",
+      "start": [
+        29,
+        29
+      ]
+    },
+    {
+      "id": "agent_4",
+      "start": [
+        21,
+        3
+      ]
+    },
+    {
+      "id": "agent_5",
+      "start": [
+        71,
+        56
+      ]
+    }
+  ]
+}

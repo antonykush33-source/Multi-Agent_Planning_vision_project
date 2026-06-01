@@ -1,0 +1,66 @@
+{
+  "case": "case_004_thin_walls_mapf",
+  "scenario": "mapf",
+  "grid_size": {
+    "width": 80,
+    "height": 60
+  },
+  "num_agents": 8,
+  "agents": [
+    {
+      "id": "agent_1",
+      "grid_x": 73,
+      "grid_y": 30,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_2",
+      "grid_x": 39,
+      "grid_y": 16,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_3",
+      "grid_x": 75,
+      "grid_y": 37,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_4",
+      "grid_x": 2,
+      "grid_y": 20,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_5",
+      "grid_x": 58,
+      "grid_y": 28,
+      "cv_detected": true
+    },
+    {
+      "id": "agent_6",
+      "grid_x": 73,
+      "grid_y": 30,
+      "cv_detected": false
+    },
+    {
+      "id": "agent_7",
+      "grid_x": 19,
+      "grid_y": 2,
+      "cv_detected": false
+    },
+    {
+      "id": "agent_8",
+      "grid_x": 48,
+      "grid_y": 48,
+      "cv_detected": true
+    }
+  ],
+  "markers": [],
+  "timing_ms": {
+    "map_parse": 1.91,
+    "agent_detect": 33.88,
+    "marker_detect": 0.0,
+    "total": 35.79
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "width": 80,
+  "height": 60,
+  "total_cells": 4800,
+  "free_cells": 4257,
+  "obstacle_cells": 543,
+  "obstacle_density": 0.1131,
+  "connectivity_ratio": 1.0,
+  "scenario_type": "mapf",
+  "num_agents": 8,
+  "num_tasks": 0,
+  "complexity_score": 20.52,
+  "agent_goal_min_distance": 17,
+  "agent_goal_max_distance": 81,
+  "agent_goal_avg_distance": 49.5,
+  "task_min_distance": null,
+  "task_max_distance": null,
+  "task_avg_distance": null
+}
